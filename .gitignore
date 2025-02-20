@@ -1,0 +1,18 @@
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Backend
+backend/node_modules/
+backend/dist/
+
+# Logs & environment files
+logs/
+*.log
+.env
+
+# OS & editor files
+.vscode/
+.DS_Store
+Thumbs.db
