@@ -13,7 +13,7 @@ const Menu: React.FC = () => {
   const { data, error, isLoading } = useGetMenuQuery();
   const menuData: FoodItem[] = data ?? [];
 
-  if (isLoading) return <p>Loading...</p>;
+  // if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error fetching menu</p>;
 
   const renderDishes = (category: string) => {

@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Homepage from "./pages/Homepage/Homepage";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import Menu from "./pages/Menu/Menu";
+import DishDetails from "./pages/DishDetails/DishDetails";
 import Footer from "./components/Footer/Footer";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Homepage/>} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/menu" element={<Menu />} />
+        <Route path="/dish-details/:id" element={<DishDetails />} />
         </Routes>
       </section>
       <div className='footer-section'>
