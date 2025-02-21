@@ -10,7 +10,7 @@ const Menu: React.FC = () => {
   }, []);
 
   // Fetch menu data
-  const { data, error, isLoading } = useGetMenuQuery();
+  const { data, error } = useGetMenuQuery();
   const menuData: FoodItem[] = data ?? [];
 
   // if (isLoading) return <p>Loading...</p>;
