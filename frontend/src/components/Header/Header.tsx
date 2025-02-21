@@ -1,6 +1,6 @@
 import "./Header.css"
 import "./Header-responsive.css"
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
 
 const Header: React.FC = () => {

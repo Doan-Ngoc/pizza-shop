@@ -4,8 +4,8 @@ const WhyUs: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollImg = document.getElementById("scroll-image");
+      if (!scrollImg) return;
       const scrollImgRect = scrollImg.getBoundingClientRect();
-      // Check if the element is in view and animation has not been triggered
       if (
         scrollImgRect.top < window.innerHeight &&
         scrollImgRect.bottom >= 0 &&
@@ -15,7 +15,6 @@ const WhyUs: React.FC = () => {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };

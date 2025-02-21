@@ -18,11 +18,11 @@ const Delivery: React.FC = () => {
           </h2>
 
           <div className="delivery-benefit-item  rounded-pill d-flex  align-items-center px-3 py-2">
-            <i class="fa fa-home"></i>
+            <i className="fa fa-home"></i>
             <span>Giao hàng siêu tốc trong vòng 30 phút</span>
           </div>
           <div className="delivery-benefit-item  rounded-pill d-flex align-items-center px-3 py-2">
-            <i class="fa fa-donate"></i>
+            <i className="fa fa-donate"></i>
             <span>Miễn phí ship với đơn hàng trên 300.000đ</span>
           </div>
           <Link to="/menu">
