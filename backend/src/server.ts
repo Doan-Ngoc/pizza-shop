@@ -19,6 +19,16 @@ app.get('/test-db', async (req, res) => {
   }
 });
 
+app.get("/menu", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT * FROM foods");
+    res.json(result.rows); 
+  } catch (error) {
+    console.error("Error fetching food data:", error);
+    res.status(500).json({ error: (error as Error).message });
+  }
+});
+
 app.get("/", (req, res) => {
   res.json("Hello from the backend!");
 });
