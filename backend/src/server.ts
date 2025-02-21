@@ -10,6 +10,7 @@ app.use(express.json());
 
 app.get('/test-db', async (req, res) => {
   try {
+    console.log("Trying to connect...");
     const result = await pool.query('SELECT NOW()'); 
     console.log("✅ Successfully connected to PostgreSQL!");
     res.json({ message: "PostgreSQL connected!", time: result.rows[0] });
