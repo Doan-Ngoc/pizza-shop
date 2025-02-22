@@ -1,14 +1,9 @@
 import "./Menu.css";
 import ProductItem from "../../components/ProductItem/ProductItem";
-import { useLayoutEffect } from "react";
 import { FoodItem } from "../../redux/interfaces";
 import { useGetMenuQuery } from "../../redux/api/menuApi";
 
 const Menu: React.FC = () => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0); // Scrolls the page to the top
-  }, []);
-
   // Fetch menu data
   const { data, error } = useGetMenuQuery();
   const menuData: FoodItem[] = data ?? [];

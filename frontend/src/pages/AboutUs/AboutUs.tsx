@@ -1,11 +1,7 @@
 import './AboutUsResponsive.css'
 import "./AboutUs.css"
-import { useLayoutEffect } from 'react';
 
 const AboutUs: React.FC = () => {
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0); // Scrolls the page to the top
-  }, []);
   return (
     <div className='about-us'>
       <img className='about-us-header img-fluid' src="images\about-us\about-us-title-1.png"

@@ -1,0 +1,88 @@
+.home-shoppingCart {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 17px;
+    display: flex;
+    gap: 5px;
+}
+
+.home-shoppingCart p {
+    color: #888888;
+}
+
+.home-shoppingCart span {
+    color: #00814b;
+    font-family: 'Kanit', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.table-cart th {
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.product-price {
+    width: 100%;
+    margin-top: 75px;
+}
+
+hr {
+    margin: 18px 0px;
+}
+
+.Cart-Total {
+    width: 35%;
+    margin-top: 100px;
+    margin-bottom: 100px
+}
+
+.Cart {
+    display: flex;
+    justify-content: space-between;
+}
+
+.CartP {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #024E82;
+}
+
+.text {
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #555555;
+}
+
+.Proceed-to-checkout {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    background-color: #00814b;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.Proceed-to-checkout:hover {
+    background-color: var(--primary-color-2);
+    transform: scale(1.1);
+}
+
+.btn {
+    opacity: 0.9;
+}
+
+.btn:hover {
+    opacity: 1;
+}
+
+.table-cart {
+    font-family: 'Kanit', sans-serif !important;
+    text-align: center;
+}

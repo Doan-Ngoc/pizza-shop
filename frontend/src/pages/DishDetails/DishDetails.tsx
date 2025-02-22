@@ -1,27 +1,35 @@
-import "./DishDetails.css"
-import "./dish-details-responsive.css"
+import "./DishDetails.css";
+import "./dish-details-responsive.css";
 import { useParams } from "react-router-dom";
-import { useLayoutEffect } from "react";
+import { useDispatch } from "react-redux";
 import { useGetMenuQuery } from "../../redux/api/menuApi";
-import { FoodItem } from "../../redux/interfaces";
+import { FoodItem, CartItem } from "../../redux/interfaces";
+import { addCartItem } from "../../redux/slices/cartSlice";
 
 const DishDetails = () => {
-   useLayoutEffect(() => {
-      window.scrollTo(0, 0); 
-    }, []);
 
   const { id } = useParams<{ id: string }>();
+  const dishId = Number(id);
+  const dispatch = useDispatch();
   const { data: menuData, isLoading, error } = useGetMenuQuery();
 
   if (isLoading) return <p>Loading... Please wait.</p>;
   if (error) return <p>Error fetching dish details.</p>;
 
   // Find the dish by ID
-  const dish: FoodItem | undefined = menuData?.find((item) => item._id === Number(id));
+  const dish: FoodItem | undefined = menuData?.find((item) => item.id === dishId);
 
   if (!dish) return <p>Dish not found.</p>;
 
-  console.log(dish)
+  const handleAddToCart = () => {
+    const cartItem = {
+    id: dish.id,
+    name: dish.name,
+    priceOfOne: dish.price,
+    image: dish.image
+    }
+    dispatch(addCartItem(cartItem))
+  };
 
   return (
     <div className="container" style={{ marginBottom: "100px" }}>
@@ -36,7 +44,9 @@ const DishDetails = () => {
               {dish.price.toLocaleString("vi", { style: "currency", currency: "VND" })}
             </p>
             <p className="product-description">{dish.description}</p>
-            <button className="round-black-btn rounded-pill">Thêm vào giỏ hàng</button>
+            <button className="round-black-btn rounded-pill" onClick={handleAddToCart}>
+              Thêm vào giỏ hàng
+            </button>
           </div>
         </div>
       </div>

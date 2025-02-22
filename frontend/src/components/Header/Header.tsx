@@ -1,9 +1,11 @@
-import "./Header.css"
-import "./Header-responsive.css"
+import "./Header.css";
+import "./Header-responsive.css";
 import { Link } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
+import { useAppSelector } from "../../redux/hooks";
 
 const Header: React.FC = () => {
+  const cart = useAppSelector((state) => state.cart.cartData);
   return (
     <div className="header">
       <nav className="navbar navbar-expand-lg">
@@ -49,8 +51,8 @@ const Header: React.FC = () => {
             <input
               type="text"
               placeholder="Tìm kiếm..."
-            //   value={searchTerm}
-            //   onChange={handleSearchChange}
+              //   value={searchTerm}
+              //   onChange={handleSearchChange}
               className="search-input"
             />
             <div className="search-icon">
@@ -58,57 +60,22 @@ const Header: React.FC = () => {
             </div>
           </div>
 
-          {/* {Object.keys(filteredDishes).map((category) => (
-            <div key={category} className="search-results">
-              {filteredDishes[category].map((dish) => (
-                <SearchResultLink
-                  to={`/dish-details/${dish.id}`}
-                  key={dish.id}
-                  className="search-result-item"
-                >
-                  {dish.title}
-                </SearchResultLink>
-              ))}
-            </div>
-          ))} */}
-
-          <button
-            className="btn rounded-pill cart-btn d-flex align-items-center gap-1"
-            data-bs-toggle="collapse"
-            data-bs-target="#collapseExample"
-            aria-expanded="false"
-            aria-controls="collapseExample"
-          >
-            <i className="fa fa-shopping-cart mr-2"></i>
-            Giỏ hàng
-            <span className="cart-quantity">
+          <Link to="/cart">
+            <button
+              className="btn rounded-pill cart-btn d-flex align-items-center gap-1"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseExample"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              <i className="fa fa-shopping-cart mr-2"></i>
+              Giỏ hàng
+              <span className="cart-quantity">
                 {/* {lengthCart} */}
-                0</span>
-          </button>
-
-          {/* <div className="cart-container collapse" id="collapseExample">
-            {cartContainer}
-            {lengthCart ? (
-              <div
-                className=" py-4 px-5"
-                style={{ backgroundColor: "var(--background-color-1)" }}
-              >
-                <div className="total-price pb-4">
-                  <h4>Tổng tiền: </h4>
-                  <span className="totalPrice">{totalPrice} </span>
-                </div>
-                <button
-                  onClick={onNavigateToProductDetail}
-                  className="btn-checkout rounded-pill py-3"
-                  data-bs-dismiss="collapse"
-                >
-                  Thanh toán
-                </button>
-              </div>
-            ) : (
-              <p className="content-cart">Chưa có sản phẩm trong giỏ hàng!</p>
-            )}
-          </div> */}
+                {cart.length}
+              </span>
+            </button>
+          </Link>
         </div>
       </nav>
     </div>
