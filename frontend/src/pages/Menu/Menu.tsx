@@ -1,15 +1,16 @@
 import "./Menu.css";
 import { useMenu } from "../../context/MenuContext";
+import Loading from "../../components/Loading";
+import Error from "../../components/Error";
 import ProductItem from "../../components/ProductItem/ProductItem";
-import { FoodItem } from "../../redux/interfaces";
 
 const Menu: React.FC = () => {
   // Fetch menu data
   const { data, isLoading, error } = useMenu();
-  const menuData: FoodItem[] = data ?? [];
+  const menuData = data ?? [];
 
-  if (isLoading) return <p>Loading...</p>;
-  if (error) return <p>Error fetching menu</p>;
+  if (isLoading) return <Loading />
+  if (error) return <Error />
 
   const renderDishes = (category: string) => {
     return menuData
@@ -26,7 +27,13 @@ const Menu: React.FC = () => {
         className="menu-header img-fluid"
         src="images/menu-page/menu-header.png"
       />
-      <div className="menu-category">
+      {isLoading ? (
+        <div className="mt-5">
+        <Loading />
+        </div>
+      ) : (
+        <>
+          <div className="menu-category">
         <h2>KHAI VỊ</h2>
         <div className="listPopularDish row">{renderDishes("khaivi")}</div>
       </div>
@@ -42,6 +49,8 @@ const Menu: React.FC = () => {
         <h2>SALAD</h2>
         <div className="listPopularDish row">{renderDishes("salad")}</div>
       </div>
+        </>
+      )}
     </div>
   );
 };

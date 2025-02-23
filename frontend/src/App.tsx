@@ -1,7 +1,6 @@
 import "./App.css";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { useGetMenuQuery } from "./redux/api/menuApi";
 import { MenuProvider } from "./context/MenuContext";
 import Header from "./components/Header/Header";
 import Homepage from "./pages/Homepage/Homepage";
@@ -15,7 +14,6 @@ import Footer from "./components/Footer/Footer";
 function App() {
 
   //Fetch danh sách món ăn
-  const { data, error } = useGetMenuQuery();
 
   const ScrollToTop = () => {
     const { pathname } = useLocation();

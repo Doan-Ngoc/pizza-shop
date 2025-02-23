@@ -39,5 +39,5 @@ export interface FoodItem {
     shippingFee: number;
     discount: number;
     couponCode?: string;
-    createdAt: string;
+    createdAt?: string;
   }

@@ -1,5 +1,7 @@
 import "./DishDetails.css";
 import "./dish-details-responsive.css";
+import { Modal } from "bootstrap";
+import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useGetMenuQuery } from "../../redux/api/menuApi";
@@ -7,20 +9,15 @@ import { FoodItem, CartItem } from "../../redux/interfaces";
 import { addCartItem } from "../../redux/slices/cartSlice";
 
 const DishDetails = () => {
-
   const { id } = useParams<{ id: string }>();
   const dishId = Number(id);
   const dispatch = useDispatch();
+  const successModalRef = useRef<HTMLDivElement>(null);
   const { data: menuData, isLoading, error } = useGetMenuQuery();
-
-  if (isLoading) return <p>Loading... Please wait.</p>;
-  if (error) return <p>Error fetching dish details.</p>;
-
-  // Find the dish by ID
   const dish: FoodItem | undefined = menuData?.find((item) => item.id === dishId);
-
   if (!dish) return <p>Dish not found.</p>;
 
+  //Add to cart logic
   const handleAddToCart = () => {
     const cartItem = {
     id: dish.id,
@@ -29,7 +26,17 @@ const DishDetails = () => {
     image: dish.image
     }
     dispatch(addCartItem(cartItem))
+    if (successModalRef.current) {
+          const modal = new Modal(successModalRef.current);
+          modal.show();
+        }
   };
+  
+   // Find the dish by ID
+   if (isLoading) return <p>Loading... Please wait.</p>;
+   if (error) return <p>Error fetching dish details.</p>;
+   
+   if (!dish) return <p>Dish not found.</p>;
 
   return (
     <div className="container" style={{ marginBottom: "100px" }}>
@@ -50,6 +57,35 @@ const DishDetails = () => {
           </div>
         </div>
       </div>
+
+      {/* Add to cart success modal */}
+      <div
+        ref={successModalRef}
+        className="modal fade"
+        id="confirmModal"
+        tabIndex={-1}
+        role="dialog"
+        aria-labelledby="confirmModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-body">
+             Thêm vào giỏ hàng thành công <br />
+            </div>
+            <div className="modal-footer">
+              <button
+                type="button"
+                className="submit-btn rounded-pill"
+                data-bs-dismiss="modal"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 };

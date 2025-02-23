@@ -1,4 +1,4 @@
-import { CartItem, CartState, OrderState } from "../interfaces";
+import {OrderState } from "../interfaces";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState: OrderState = {
@@ -10,8 +10,7 @@ const initialState: OrderState = {
     orderPrice: 0,
     shippingFee: 0,
     discount: 0,
-    couponCode: '',
-    createdAt: ''
+    couponCode: ''
   };
   
 const orderSlice = createSlice({

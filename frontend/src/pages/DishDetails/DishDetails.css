@@ -38,8 +38,8 @@
     object-fit: cover;
 }
 
-.product-price-discount {
-    font-size: 22px;
+.product-price {
+    font-size: 30px; !important
     font-weight: 500;
     padding: 10px 0;
     clear: both;
@@ -66,12 +66,6 @@ option {
 
 .product-info {
     width: 100%;
-}
-
-.product-dtl p {
-    font-size: 14px;
-    line-height: 24px;
-    color: #7a7a7a;
 }
 
 .product-dtl .form-control {

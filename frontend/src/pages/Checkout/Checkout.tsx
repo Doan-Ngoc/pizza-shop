@@ -3,13 +3,16 @@ import "./checkout-responsive.css";
 import { Modal } from "bootstrap";
 import { useState, useEffect, useRef, useMemo } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-import { createOrder } from "../../redux/slices/orderSlice";
+import { createOrder, resetOrder } from "../../redux/slices/orderSlice";
+import { clearCart } from "../../redux/slices/cartSlice";
 import { OrderState } from "../../redux/interfaces";
 import { useCreateOrderMutation } from "../../redux/api/orderApi";
 
 const Checkout: React.FC = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const order = useAppSelector((state) => state.order);
   const cartData = useAppSelector((state) => state.cart.cartData);
   // Tính tiền giỏ hàng
@@ -22,15 +25,18 @@ const Checkout: React.FC = () => {
   }, [cartData]);
 
   /*Tính tiền giảm giá*/
+  const [inputCouponValue, setInputCouponValue] = useState("");
   const [couponCode, setCouponCode] = useState("");
   const [resultMessage, setResultMessage] = useState("");
   const [discountAmount, setDiscountAmount] = useState(0);
 
   const handleApply = () => {
-    if (couponCode === "anngon") {
+    if (inputCouponValue === "anngon") {
+      setCouponCode("anngon")
       setResultMessage("-30,000 đ");
       setDiscountAmount(30000);
     } else {
+      setCouponCode("")
       setResultMessage("Mã giảm giá không hợp lệ");
       setDiscountAmount(0);
     }
@@ -66,7 +72,6 @@ const Checkout: React.FC = () => {
       couponCode: couponCode,
     };
     dispatch(createOrder(orderDetail));
-    console.log("sucesss");
     if (confirmModalRef.current) {
       const modal = new Modal(confirmModalRef.current);
       modal.show();
@@ -75,19 +80,21 @@ const Checkout: React.FC = () => {
 
   //Confirm order and send data to backend
   const [createOrderMutation] = useCreateOrderMutation();
+  const completeModalRef = useRef<HTMLDivElement>(null);
   const handleConfirmModal = async() => {
     try {
-      dispatch(createOrder({createdAt: new Date().toISOString()}));
-      await createOrderMutation(order); 
-      console.log('succeeded')
+      await createOrderMutation(order);
+      dispatch(resetOrder()) 
+      dispatch(clearCart())
       if (confirmModalRef.current) {
         const modal = new Modal(confirmModalRef.current);
         modal.hide();
       }
-      // if (modalRef.current) {
-      //   const modal = new bootstrap.Modal(modalRef.current);
-      //   modal.show(); // Show success modal
-      // }
+      // Show success modal
+      if (completeModalRef.current) {
+        const modal = new Modal(completeModalRef.current);
+        modal.show(); 
+      }
     } catch (error) {
       console.error('Order creation failed:', error);
     }
@@ -137,7 +144,7 @@ const Checkout: React.FC = () => {
               <span>Địa chỉ email</span>
               <span style={{ color: "#D6763C" }}>*</span>
               <div>
-                <input type="email" id="mail" {...register("mail")} />
+                <input type="email" id="mail" {...register("email")} />
               </div>
             </div>
             <div className="subtotal w-100 d-flex justify-content-between align-items-center">
@@ -166,8 +173,8 @@ const Checkout: React.FC = () => {
                   className="input-coupon"
                   style={{ padding: "0px 10px" }}
                   type="text"
-                  value={couponCode}
-                  onChange={(e) => setCouponCode(e.target.value)}
+                  value={inputCouponValue}
+                  onChange={(e) => setInputCouponValue(e.target.value)}
                 />
                 <button
                   type="button"
@@ -237,7 +244,7 @@ const Checkout: React.FC = () => {
 
       {/* Modal hoàn thành đơn hàng */}
       <div
-        // ref={confirmModalRef}
+        ref={completeModalRef}
         className="modal fade"
         id="exampleModal"
         tabIndex={-1}
@@ -256,6 +263,7 @@ const Checkout: React.FC = () => {
                 type="button"
                 className="submit-btn rounded-pill"
                 data-bs-dismiss="modal"
+                onClick={() => navigate("/")}
               >
                 OK
               </button>
