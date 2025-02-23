@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useGetMenuQuery } from "../../redux/api/menuApi";
 import { addCartItem } from "../../redux/slices/cartSlice";
+import { FoodItem } from "../../redux/interfaces";
 
 const DishDetails = () => {
   const { id } = useParams<{ id: string }>();
