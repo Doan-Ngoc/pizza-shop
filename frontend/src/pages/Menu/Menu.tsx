@@ -1,14 +1,14 @@
 import "./Menu.css";
+import { useMenu } from "../../context/MenuContext";
 import ProductItem from "../../components/ProductItem/ProductItem";
 import { FoodItem } from "../../redux/interfaces";
-import { useGetMenuQuery } from "../../redux/api/menuApi";
 
 const Menu: React.FC = () => {
   // Fetch menu data
-  const { data, error } = useGetMenuQuery();
+  const { data, isLoading, error } = useMenu();
   const menuData: FoodItem[] = data ?? [];
 
-  // if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <p>Loading...</p>;
   if (error) return <p>Error fetching menu</p>;
 
   const renderDishes = (category: string) => {

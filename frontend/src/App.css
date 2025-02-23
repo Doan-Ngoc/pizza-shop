@@ -6,7 +6,5 @@
 
 .page-content{
   flex: 1;
+  width: 100wh;
 }
-/* .footer-section {
-  flex-shrink: 0;
-} */

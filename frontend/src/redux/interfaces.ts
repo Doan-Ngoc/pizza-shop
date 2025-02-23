@@ -28,3 +28,16 @@ export interface FoodItem {
   export interface CartState {
     cartData: CartItem[]; 
   }
+
+  export interface OrderState {
+    name: string;
+    address: string;
+    phone: string;
+    email?: string;
+    items: CartItem[]; 
+    orderPrice: number;
+    shippingFee: number;
+    discount: number;
+    couponCode?: string;
+    createdAt: string;
+  }

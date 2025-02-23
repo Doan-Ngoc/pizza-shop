@@ -29,11 +29,12 @@
 
 .price-and-btn,
 .card-body {
-  width: 100% !important
+  width: 100% !important;
 }
 
 .cart-item-buy-btn {
   font-size: 1rem !important;
+  white-space: nowrap;
 }
 
 .card-text {

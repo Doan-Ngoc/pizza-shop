@@ -1,4 +1,4 @@
-@media only screen and (min-width: 575px) and (max-width: 768px) {
+@media (max-width: 768px) {
   /*Popular Dish Navbar*/
   .menu_tab {
     margin: 0 auto;

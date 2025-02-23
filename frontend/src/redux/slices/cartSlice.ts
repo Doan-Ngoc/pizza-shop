@@ -33,7 +33,6 @@ const cartSlice = createSlice({
         existingItem.quantity += 1;
         existingItem.totalPrice = existingItem.quantity * existingItem.priceOfOne;
         }
-        else return;
       },
       decreaseQuantity: (state, action: PayloadAction<number>) => {
         const existingItem = state.cartData.find((item) => item.id === action.payload);
@@ -41,17 +40,16 @@ const cartSlice = createSlice({
         existingItem.quantity -= 1;
         existingItem.totalPrice = existingItem.quantity * existingItem.priceOfOne;
         }
-        else return;
       },
       deleteItem: (state, action: PayloadAction<number>) => {
         const existingItemIndex = state.cartData.findIndex((item) => item.id === action.payload);
         if (existingItemIndex!== -1) {
         state.cartData.splice(existingItemIndex, 1)
         }
-        else return;
       },
+      clearCart: () => initialState
     },
   });
   
-  export const { addCartItem, increaseQuantity, decreaseQuantity, deleteItem } = cartSlice.actions;
+  export const { addCartItem, increaseQuantity, decreaseQuantity, deleteItem, clearCart } = cartSlice.actions;
   export default cartSlice.reducer; 

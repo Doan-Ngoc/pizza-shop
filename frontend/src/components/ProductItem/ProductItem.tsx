@@ -24,7 +24,7 @@ const ProductItem: React.FC<ProductItemProps> = ({ dish }) => {
           <p className="card-text">{price.toLocaleString('vi', {style : 'currency', currency : 'VND'})} </p>
           <Link to={`/dish-details/${id}`}>
             <button className="cart-item-buy-btn btn btn-primary rounded-pill">
-              Mua ngay </button>
+              Chi tiết </button>
           </Link>
         </div>
       </div>

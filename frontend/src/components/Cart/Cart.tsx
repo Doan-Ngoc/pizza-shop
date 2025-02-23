@@ -1,29 +1,36 @@
 import "./Cart.css";
 import "./CartResponsive.css";
 import { FaTrashAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { useMemo } from "react";
-import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   increaseQuantity,
   decreaseQuantity,
   deleteItem,
 } from "../../redux/slices/cartSlice";
+import { createOrder } from "../../redux/slices/orderSlice";
 
 const Cart: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const cart = useAppSelector((state) => state.cart.cartData);
 
   //Calculate total price of the whole cart
   const allCartPrice = useMemo(() => {
-    let allCartPrice = 0;
+    let allPrice = 0;
     for (const cartItem of cart) {
-      allCartPrice += cartItem.totalPrice;
-    }
-    return allCartPrice;
-  }, [cart]);
+      allPrice += cartItem.totalPrice;
+  }
+  return allPrice;
+}, [cart]);
 
+  //Move to checkout page
+  const moveToCheckOut = () => {
+    dispatch(createOrder({orderPrice: allCartPrice}))
+    navigate("/checkout")
+  }
   //Create the cart content
   const cartBodyElements = cart.map((cartItem, index) => {
     const { id, name, image, priceOfOne, quantity, totalPrice } = cartItem;
@@ -141,7 +148,7 @@ const Cart: React.FC = () => {
           </div>
           {/* Button to checkout page */}
           <div className="w-100 d-flex justify-content-center">
-            <button className="Proceed-to-checkout rounded-pill">
+            <button className="Proceed-to-checkout rounded-pill" onClick={moveToCheckOut}>
               Thanh toán
             </button>
           </div>
