@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   const navigate = useNavigate()
 
   // Function search
-  const { data, isLoading, error } = useMenu();
+  const { data} = useMenu();
   const menuData = data ?? [];
   const [searchTerm, setSearchTerm] = useState("");
 

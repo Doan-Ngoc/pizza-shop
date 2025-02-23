@@ -5,7 +5,6 @@ import { useRef } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useGetMenuQuery } from "../../redux/api/menuApi";
-import { FoodItem, CartItem } from "../../redux/interfaces";
 import { addCartItem } from "../../redux/slices/cartSlice";
 
 const DishDetails = () => {
