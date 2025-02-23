@@ -7,7 +7,7 @@ const Loading = () => {
       <h3>Loading...</h3>
       <p>
         If it's your first time visiting the website, it may take around 1
-        minute to finish loading. Thank you for your patient.
+        minute to finish loading. Thank you for your patience.
       </p>
     </div>
   );
