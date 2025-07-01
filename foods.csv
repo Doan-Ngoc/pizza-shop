@@ -1,0 +1,25 @@
+id,name,price,image,description,isPopular,category
+1,Gà Nướng BBQ,119000,chicken/ga-bbq-2pcs.png,"Thịt gà mềm ngọt, thấm đẫm gia vị, da gà giòn rụm, màu vàng ươm bắt mắt.",t,chicken
+2,Gà Giòn Sốt Hàn - Truyền Thống,119000,chicken/ga-sot-truyen-thong-2pcs.png,Ngon hơn khi dùng kèm sốt mù tạc mật ong và củ cải lên men.,f,chicken
+3,Gà Giòn Sốt Tương Tỏi Hàn Quốc,129000,chicken/ga-sot-tuong-toi-2pcs.png,"Công thức đặc biệt pha chút vị the nhè nhẹ và mùi thơm của gừng, tỏi mang đến cảm giác mới lạ khi thưởng thức.",t,chicken
+4,Gà Giòn Sốt Hàn - Cay,119000,chicken/ga-sot-cay-2pcs.png,Phục vụ kèm sốt mù tạc mật ong và củ cải lên men.,f,chicken
+5,Gà Sốt Kem Hành,129000,chicken/ga-sot-kem-hanh-2pcs.png,"Bên ngoài giòn bên trong mềm mọng nước, ăn kèm cùng nước sốt kem hành. Vị thơm ngọt của hành cùng sự thơm béo của kem làm mỗi miếng gà rộp rộp càng thêm ngon!",t,chicken
+6,Khay Gà Rộp Rộp sốt Hàn,139000,chicken/khay-ga-sot-truyen-thong.png,,t,chicken
+7,Bánh Mì Bơ Tỏi,49000,khaivi/khai-vi-3.png,Một lớp bơ tỏi thơm ngon trên các lát bánh mì nướng,t,khaivi
+8,Bánh Mì Bơ Tỏi Phủ Phô Mai,69000,khaivi/khai-vi-6.png,Lát bánh mì nướng được quết 1 lớp bơ tỏi và phô mai thơm béo,f,khaivi
+9,Bánh Mì Que Nướng,59000,khaivi/khai-vi-5.png,Làm từ đế bột của Pizza và dùng kèm sốt Cocktail,f,khaivi
+10,Gà Popcorn,99000,khaivi/khai-vi-2.png,,t,khaivi
+11,Khoai Tây Chiên,79000,khaivi/khai-vi-4.png,Khoai tây sợi được chiên và tẩm một lớp muối thấm vị,t,khaivi
+13,Pizza Hải Sản Pesto Xanh,249000,pizza/pizza-pesto.png,"Tôm, thanh cua, mực và bông cải xanh tươi ngon trên nền sốt Pesto Xanh",t,pizza
+14,Pizza Tôm Cocktail,239000,pizza/pizza-tom-cocktail.png,"Tôm với nấm, dứa, cà chua và sốt Thousand Island.",f,pizza
+15,Pizza Aloha,229000,pizza/aloha_pizza.png,"Thịt nguội, xúc xích và dứa hòa quyện với sốt Thousand Island",f,pizza
+16,Pizza Thịt Xông Khói,229000,pizza/pizza-thit-xong-khoi.png,"Thịt giăm bông, thịt xông khói và hai loại rau của ớt xanh, cà chua",t,pizza
+17,Pizza Gà Nướng 3 Vị,229000,pizza/pizza-ga-nuong.png,"Gà nướng, gà bơ tỏi và gà ướp sốt nấm",t,pizza
+18,Pizza 5 Loại Thịt Đặc Biệt,249000,pizza/pizza-5-loai-thit.png,"Xúc xích lợn và bò đặc trưng của Ý, giăm bông, thịt xông khói",t,pizza
+19,Pizza Phô Mai,219000,pizza/cheese-pizza.png,Bánh Pizza với vô vàn phô mai để bạn tha hồ tận hưởng.,f,pizza
+20,Pizza Rau Củ,219000,pizza/pizza-rau-cu.png,"Hành, ớt chuông, nấm, dứa, cà chua",f,pizza
+21,Salad Gà Giòn Không Xương,89000,salad/salad_1.png,"Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island",t,salad
+22,Salad Da Cá Hồi Giòn,89000,salad/salad_2.png,"Salad với da cá hồi giòn với bắp cải đỏ, cà chua bi, ngô với sốt Yuzu",t,salad
+23,Salad Đặc Sắc,89000,salad/salad_3.png,Salad rau và trái cây tươi dùng kèm xốt kem đặc biệt của The Pizza Company.,t,salad
+24,Rau tươi trộn với sốt Caesar,89000,salad/salad_4.png,Rau tươi trộn với sốt Caesar,t,salad
+12,Mực Chiên Giòn,119000,khaivi/khai-vi-7.png,Mực tẩm bột chiên giòn dùng kèm sốt ngò tây,t,khaivi

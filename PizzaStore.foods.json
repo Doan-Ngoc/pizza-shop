@@ -1,0 +1,193 @@
+[
+  {
+    "name": "Gà Nướng BBQ",
+    "price": 119000,
+    "image": "chicken/ga-bbq-2pcs.png",
+    "description": "Thịt gà mềm ngọt, thấm đẫm gia vị, da gà giòn rụm, màu vàng ươm bắt mắt.",
+    "isPopular": true,
+    "category": "chicken"
+  },
+  {
+    "name": "Gà Giòn Sốt Hàn - Truyền Thống",
+    "price": 119000,
+    "image": "chicken/ga-sot-truyen-thong-2pcs.png",
+    "description": "Ngon hơn khi dùng kèm sốt mù tạc mật ong và củ cải lên men.",
+    "isPopular": false,
+    "category": "chicken"
+  },
+  {
+    "name": "Gà Giòn Sốt Tương Tỏi Hàn Quốc",
+    "price": 129000,
+    "image": "chicken/ga-sot-tuong-toi-2pcs.png",
+    "description": "Công thức đặc biệt pha chút vị the nhè nhẹ và mùi thơm của gừng, tỏi mang đến cảm giác mới lạ khi thưởng thức.",
+    "isPopular": true,
+    "category": "chicken"
+  },
+  {
+    "name": "Gà Giòn Sốt Hàn - Cay",
+    "price": 119000,
+    "image": "chicken/ga-sot-cay-2pcs.png",
+    "description": "Phục vụ kèm sốt mù tạc mật ong và củ cải lên men.",
+    "isPopular": false,
+    "category": "chicken"
+  },
+  {
+    "name": "Gà Sốt Kem Hành",
+    "price": 129000,
+    "image": "chicken/ga-sot-kem-hanh-2pcs.png",
+    "description": "Bên ngoài giòn bên trong mềm mọng nước, ăn kèm cùng nước sốt kem hành. Vị thơm ngọt của hành cùng sự thơm béo của kem làm mỗi miếng gà rộp rộp càng thêm ngon!",
+    "isPopular": true,
+    "category": "chicken"
+  },
+  {
+    "name": "Khay Gà Rộp Rộp sốt Hàn",
+    "price": 139000,
+    "image": "chicken/khay-ga-sot-truyen-thong.png",
+    "isPopular": true,
+    "category": "chicken"
+  },
+  {
+    "name": "Bánh Mì Bơ Tỏi",
+    "image": "khaivi/khai-vi-3.png",
+    "description": "Một lớp bơ tỏi thơm ngon trên các lát bánh mì nướng",
+    "price": 49000,
+    "isPopular": true,
+    "category": "khaivi"
+  },
+  {
+    "name": "Bánh Mì Bơ Tỏi Phủ Phô Mai",
+    "image": "khaivi/khai-vi-6.png",
+    "description": "Lát bánh mì nướng được quết 1 lớp bơ tỏi và phô mai thơm béo",
+    "price": 69000,
+    "isPopular": false,
+    "category": "khaivi"
+  },
+  {
+    "name": "Bánh Mì Que Nướng",
+    "image": "khaivi/khai-vi-5.png",
+    "description": "Làm từ đế bột của Pizza và dùng kèm sốt Cocktail",
+    "price": 59000,
+    "isPopular": false,
+    "category": "khaivi"
+  },
+  {
+    "name": "Gà Popcorn",
+    "image": "khaivi/khai-vi-2.png",
+    "description": "",
+    "price": 99000,
+    "isPopular": true,
+    "category": "khaivi"
+  },
+  {
+    "name": "Khoai Tây Chiên",
+    "image": "khaivi/khai-vi-4.png",
+    "description": "Khoai tây sợi được chiên và tẩm một lớp muối thấm vị",
+    "price": 79000,
+    "isPopular": true,
+    "category": "khaivi"
+  },
+  {
+    "name": "Mực Chiên Giòn",
+    "image": "khaivi/khai-vi-7.png",
+    "description": "Mực tẩm bột chiên giòn dùng kèm sốt ngò tây",
+    "price": 119000,
+    "isPopular": false,
+    "category": "khaivi"
+  },
+  {
+    "name": "Pizza Hải Sản Pesto Xanh",
+    "image": "pizza/pizza-pesto.png",
+    "price": 249000,
+    "description": "Tôm, thanh cua, mực và bông cải xanh tươi ngon trên nền sốt Pesto Xanh",
+    "isPopular": true,
+    "category": "pizza"
+  },
+  {
+    "name": "Pizza Tôm Cocktail",
+    "image": "pizza/pizza-tom-cocktail.png",
+    "price": 239000,
+    "description": "Tôm với nấm, dứa, cà chua và sốt Thousand Island.",
+    "isPopular": false,
+    "category": "pizza"
+  },
+  {
+    "name": "Pizza Aloha",
+    "image": "pizza/aloha_pizza.png",
+    "price": 229000,
+    "description": "Thịt nguội, xúc xích và dứa hòa quyện với sốt Thousand Island",
+    "isPopular": false,
+    "category": "pizza"
+  },
+  {
+    "name": "Pizza Thịt Xông Khói",
+    "price": 229000,
+    "image": "pizza/pizza-thit-xong-khoi.png",
+    "description": "Thịt giăm bông, thịt xông khói và hai loại rau của ớt xanh, cà chua",
+    "isPopular": true,
+    "category": "pizza"
+  },
+  {
+    "name": "Pizza Gà Nướng 3 Vị",
+    "image": "pizza/pizza-ga-nuong.png",
+    "price": 229000,
+    "description": "Gà nướng, gà bơ tỏi và gà ướp sốt nấm",
+    "isPopular": true,
+    "category": "pizza"
+  },
+  {
+    "name": "Pizza 5 Loại Thịt Đặc Biệt",
+    "image": "pizza/pizza-5-loai-thit.png",
+    "price": 249000,
+    "description": "Xúc xích lợn và bò đặc trưng của Ý, giăm bông, thịt xông khói",
+    "isPopular": true,
+    "category": "pizza"
+  },
+  {
+    "name": "Pizza Phô Mai",
+    "image": "pizza/cheese-pizza.png",
+    "price": 219000,
+    "description": "Bánh Pizza với vô vàn phô mai để bạn tha hồ tận hưởng.",
+    "isPopular": false,
+    "category": "pizza"
+  },
+  {
+    "name": "Pizza Rau Củ",
+    "image": "pizza/pizza-rau-cu.png",
+    "price": 219000,
+    "description": "Hành, ớt chuông, nấm, dứa, cà chua",
+    "isPopular": false,
+    "category": "pizza"
+  },
+  {
+    "name": "Salad Gà Giòn Không Xương",
+    "image": "salad/salad_1.png",
+    "description": "Salad Gà giòn với trứng cút, thịt xông khói, phô mai parmesan và sốt Thousand Island",
+    "price": 89000,
+    "isPopular": true,
+    "category": "salad"
+  },
+  {
+    "name": "Salad Da Cá Hồi Giòn",
+    "image": "salad/salad_2.png",
+    "description": "Salad với da cá hồi giòn với bắp cải đỏ, cà chua bi, ngô với sốt Yuzu",
+    "price": 89000,
+    "isPopular": true,
+    "category": "salad"
+  },
+  {
+    "name": "Salad Đặc Sắc",
+    "image": "salad/salad_3.png",
+    "description": "Salad rau và trái cây tươi dùng kèm xốt kem đặc biệt của The Pizza Company.",
+    "price": 89000,
+    "isPopular": true,
+    "category": "salad"
+  },
+  {
+    "name": "Rau tươi trộn với sốt Caesar",
+    "image": "salad/salad_4.png",
+    "description": "Rau tươi trộn với sốt Caesar",
+    "price": 89000,
+    "isPopular": true,
+    "category": "salad"
+  }
+]
