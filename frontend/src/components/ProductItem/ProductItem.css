@@ -92,9 +92,11 @@ i:hover {
     width: 200px;
   }
 }
+
 @media (min-width: 768px) {
   .product-item {
     width: 170px;
+    
   }
   .cart-item-buy-btn {
     font-size: 0.8rem !important;

@@ -17,9 +17,9 @@ const Checkout: React.FC = () => {
   const cartData = useAppSelector((state) => state.cart.cartData);
   // Tính tiền giỏ hàng
   const cartValue = useMemo(() => {
-      let allPrice = 0;
-      for (const cartItem of cartData) {
-        allPrice += cartItem.totalPrice;
+    let allPrice = 0;
+    for (const cartItem of cartData) {
+      allPrice += cartItem.totalPrice;
     }
     return allPrice;
   }, [cartData]);
@@ -32,11 +32,11 @@ const Checkout: React.FC = () => {
 
   const handleApply = () => {
     if (inputCouponValue === "anngon") {
-      setCouponCode("anngon")
+      setCouponCode("anngon");
       setResultMessage("-30,000 đ");
       setDiscountAmount(30000);
     } else {
-      setCouponCode("")
+      setCouponCode("");
       setResultMessage("Mã giảm giá không hợp lệ");
       setDiscountAmount(0);
     }
@@ -45,7 +45,7 @@ const Checkout: React.FC = () => {
   /*Tính tiền ship*/
   let shippingFee = 0;
   if (cartValue - discountAmount <= 300000) {
-    shippingFee = 30000;
+    shippingFee = 20000;
   } else {
     shippingFee = 0;
   }
@@ -81,11 +81,11 @@ const Checkout: React.FC = () => {
   //Confirm order and send data to backend
   const [createOrderMutation] = useCreateOrderMutation();
   const completeModalRef = useRef<HTMLDivElement>(null);
-  const handleConfirmModal = async() => {
+  const handleConfirmModal = async () => {
     try {
       await createOrderMutation(order);
-      dispatch(resetOrder()) 
-      dispatch(clearCart())
+      dispatch(resetOrder());
+      dispatch(clearCart());
       if (confirmModalRef.current) {
         const modal = new Modal(confirmModalRef.current);
         modal.hide();
@@ -93,12 +93,12 @@ const Checkout: React.FC = () => {
       // Show success modal
       if (completeModalRef.current) {
         const modal = new Modal(completeModalRef.current);
-        modal.show(); 
+        modal.show();
       }
     } catch (error) {
-      console.error('Order creation failed:', error);
+      console.error("Order creation failed:", error);
     }
-  }
+  };
 
   // Rendering
   return (
@@ -156,16 +156,6 @@ const Checkout: React.FC = () => {
                 })}{" "}
               </div>
             </div>
-            <div className="subtotal w-100 d-flex justify-content-between align-items-center">
-              <div className="title-fee">Phí giao hàng:</div>
-              <div className="subtotal-price">
-                {shippingFee.toLocaleString("vi", {
-                  style: "currency",
-                  currency: "VND",
-                })}{" "}
-              </div>
-            </div>
-            <p className="fst-italic fs-6">(Free ship cho đơn hàng từ 300.000 đ)</p>
             <div className="coupon w-100 d-flex justify-content-between align-items-center">
               <div className="title-coupon">Mã giảm giá:</div>
               <div>
@@ -185,7 +175,21 @@ const Checkout: React.FC = () => {
                 </button>
               </div>
             </div>
-            <p className="fst-italic fs-6">(Nhập mã 'anngon', giảm ngay 30.000 đ!)</p>
+            <p className="fst-italic fs-6">
+              (Nhập mã 'anngon', giảm ngay 30.000 đ!)
+            </p>
+            <div className="subtotal w-100 d-flex justify-content-between align-items-center">
+              <div className="title-fee">Phí giao hàng:</div>
+              <div className="subtotal-price">
+                {shippingFee.toLocaleString("vi", {
+                  style: "currency",
+                  currency: "VND",
+                })}{" "}
+              </div>
+            </div>
+            <p className="fst-italic fs-6">
+              (Free ship cho đơn hàng từ 300.000 đ)
+            </p>
             {resultMessage && (
               <div className="w-100 d-flex justify-content-end align-items-center discount-amount">
                 {resultMessage}
@@ -226,7 +230,7 @@ const Checkout: React.FC = () => {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-body">
-             Xác nhận gửi đơn đặt hàng? <br />
+              Xác nhận gửi đơn đặt hàng? <br />
             </div>
             <div className="modal-footer">
               <button

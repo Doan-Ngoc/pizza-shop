@@ -9,14 +9,14 @@ const Menu: React.FC = () => {
   const { data, isLoading, error } = useMenu();
   const menuData = data ?? [];
 
-  if (isLoading) return <Loading />
-  if (error) return <Error />
+  if (isLoading) return <Loading />;
+  if (error) return <Error />;
 
   const renderDishes = (category: string) => {
     return menuData
       .filter((dish) => dish.category === category)
       .map((dish) => (
-        <div className="col-lg-3 col-md-6 col-sm-12" key={dish.name}>
+        <div className="" key={dish.name}>
           <ProductItem dish={dish} />
         </div>
       ));
@@ -29,26 +29,26 @@ const Menu: React.FC = () => {
       />
       {isLoading ? (
         <div className="mt-5">
-        <Loading />
+          <Loading />
         </div>
       ) : (
         <>
           <div className="menu-category">
-        <h2>KHAI VỊ</h2>
-        <div className="listPopularDish row">{renderDishes("khaivi")}</div>
-      </div>
-      <div className="menu-category">
-        <h2>GÀ RÁN</h2>
-        <div className="listPopularDish row">{renderDishes("chicken")}</div>
-      </div>
-      <div className="menu-category">
-        <h2>PIZZA</h2>
-        <div className="listPopularDish row">{renderDishes("pizza")}</div>
-      </div>
-      <div className="menu-category">
-        <h2>SALAD</h2>
-        <div className="listPopularDish row">{renderDishes("salad")}</div>
-      </div>
+            <h2>KHAI VỊ</h2>
+            <div className="list-dish">{renderDishes("khaivi")}</div>
+          </div>
+          <div className="menu-category">
+            <h2>GÀ RÁN</h2>
+            <div className="list-dish">{renderDishes("chicken")}</div>
+          </div>
+          <div className="menu-category">
+            <h2>PIZZA</h2>
+            <div className="list-dish">{renderDishes("pizza")}</div>
+          </div>
+          <div className="menu-category">
+            <h2>SALAD</h2>
+            <div className="list-dish">{renderDishes("salad")}</div>
+          </div>
         </>
       )}
     </div>
