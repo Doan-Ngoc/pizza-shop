@@ -15,7 +15,8 @@ const PopularDish: React.FC = () => {
     return menuData
       .filter((dish) => dish.isPopular === true && dish.category === category)
       .map((dish) => (
-        <div key={dish.name} className=" col-lg-3 col-xxl-3 col-md-6 col-sm-12">
+        // <div key={dish.name} className=" col-lg-3 col-xxl-3 col-md-6 col-sm-12">
+        <div key={dish.name} className=" col">
           <ProductItem dish={dish} />
         </div>
       ));
@@ -26,45 +27,59 @@ const PopularDish: React.FC = () => {
     return (
       <div className="row">
         <ul className="nav nav-tabs menu_tab row" id="myTab" role="tablist">
-          <li className="nav-item col-3">
+          <li
+            className={`nav-item col-3 ${
+              activeTab === "pizza" ? "active" : ""
+            }`}
+          >
             <a
-              className={`nav-link ${activeTab === "pizza" ? "active" : ""}`}
+              className="nav-link"
               id="pizza-tab"
               data-bs-toggle="tab"
               href="#pizza"
               role="tab"
               onClick={() => handleTabClick("pizza")}
             >
-              Pizza
+              PIZZA
             </a>
           </li>
-          <li className="nav-item col-3">
+          <li
+            className={`nav-item col-3 ${
+              activeTab === "chicken" ? "active" : ""
+            }`}
+          >
             <a
               className="nav-link"
               id="chicken-tab"
               data-bs-toggle="tab"
-              href="#spaghetti"
+              href="#chicken"
               role="tab"
               onClick={() => handleTabClick("chicken")}
             >
-              Gà rán
+              GÀ RÁN
             </a>
           </li>
-          <li className="nav-item col-3">
+          <li
+            className={`nav-item col-3 ${
+              activeTab === "appetizer" ? "active" : ""
+            }`}
+          >
             <a
-              className={`nav-link ${
-                activeTab === "appetizer" ? "active" : ""
-              }`}
+              className="nav-link"
               id="appetizer-tab"
               data-bs-toggle="tab"
               role="tab"
               href="#appetizer"
               onClick={() => handleTabClick("appetizer")}
             >
-              Khai vị
+              KHAI VỊ
             </a>
           </li>
-          <li className="nav-item col-3">
+          <li
+            className={`nav-item col-3 ${
+              activeTab === "salad" ? "active" : ""
+            }`}
+          >
             <a
               className="nav-link"
               id="salad-tab"
@@ -73,7 +88,7 @@ const PopularDish: React.FC = () => {
               role="tab"
               onClick={() => handleTabClick("salad")}
             >
-              Salad
+              SALAD
             </a>
           </li>
         </ul>
@@ -86,12 +101,11 @@ const PopularDish: React.FC = () => {
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab);
-    console.log("Tab đang active là", activeTab);
   };
 
   //Render
   return (
-    <div className="popular-dish w-75 mx-auto text-center">
+    <div className="popular-dish mx-auto text-center">
       <h2 className="name">Món ngon phải thử</h2>
       {isLoading ? (
         <Loading />

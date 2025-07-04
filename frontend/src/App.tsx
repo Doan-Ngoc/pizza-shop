@@ -12,7 +12,6 @@ import Checkout from "./pages/Checkout/Checkout";
 import Footer from "./components/Footer/Footer";
 
 function App() {
-
   //Fetch danh sách món ăn
 
   const ScrollToTop = () => {
@@ -29,21 +28,21 @@ function App() {
   return (
     <div className="App">
       <MenuProvider>
-      <Header />
-      <section className="page-content">
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/dish-details/:id" element={<DishDetails />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-      </section>
-      <div className="footer-section">
-        <Footer />
-      </div>
+        <Header />
+        <section className="page-content ">
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/dish-details/:id" element={<DishDetails />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<Checkout />} />
+          </Routes>
+        </section>
+        <div className="footer-section">
+          <Footer />
+        </div>
       </MenuProvider>
     </div>
   );

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./homepage-css/delivery-responsive.css"
+import "./homepage-css/delivery-responsive.css";
 
 const Delivery: React.FC = () => {
   return (
@@ -26,7 +26,7 @@ const Delivery: React.FC = () => {
             <span>Miễn phí ship với đơn hàng trên 300.000đ</span>
           </div>
           <Link to="/menu">
-            <button className="btn rounded-pill w-30 order-now, order-now-btn">
+            <button className="btn rounded-pill w-30 order-now-btn">
               Đặt món ngay
             </button>
           </Link>

@@ -1,4 +1,13 @@
-
+.product-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  margin: auto;
+  margin-bottom: 30px !important;
+  border-radius: 10% !important;
+}
 
 .card-img-top {
   display: flex;
@@ -11,20 +20,26 @@
 
 .card-img-top img {
   object-fit: cover !important;
+  height: 80%;
+  width: 80%;
+  flex-basis: calc(25% - 1rem);
 }
 
 .card-img-top img:hover {
   transform: scale(1.1);
 }
 
-.product-item {
+.card-title {
+  font-size: 1rem !important;
+  height: 3rem;
+  font-weight: 600;
+}
+
+.price-and-btn {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 250px; */
-  margin: auto;
-  margin-bottom: 30px !important;
+  flex-direction: column;
 }
 
 .price-and-btn,
@@ -33,13 +48,24 @@
 }
 
 .cart-item-buy-btn {
-  font-size: 1rem !important;
+  font-size: 0.8rem !important;
   white-space: nowrap;
+  background-color: var(--primary-color-1) !important;
+  border: none !important;
+}
+
+.cart-item-buy-btn:hover {
+  background-color: var(--primary-color-3) !important;
 }
 
 .card-text {
-  font-size: 1rem !important;
+  font-size: 0.9rem !important;
   margin-bottom: 0 !important;
+  font-weight: 500;
+}
+
+.price-and-btn {
+  gap: 10px
 }
 
 i {
@@ -48,5 +74,51 @@ i {
 }
 
 i:hover {
-  color: var(--primary-color-3)
+  color: var(--primary-color-3);
+}
+
+@media (min-width: 400px) {
+  .product-item {
+    width: 160px;
+  }
+  .price-and-btn {
+  flex-direction: row;
+}
+}
+
+
+@media (min-width: 576px) {
+  .product-item {
+    width: 200px;
+  }
+}
+@media (min-width: 768px) {
+  .product-item {
+    width: 170px;
+  }
+  .cart-item-buy-btn {
+    font-size: 0.8rem !important;
+  }
+}
+@media (min-width: 1024px) {
+  .product-item {
+    width: 200px;
+  }
+  .cart-item-buy-btn {
+    font-size: 1rem !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .product-item {
+    width: 250px;
+  }
+  .cart-item-buy-btn {
+    font-size: 1rem !important;
+    padding: 5px 20px !important
+  }
+
+  .card-title {
+    font-size: 1.2rem !important;
+  }
 }

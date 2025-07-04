@@ -1,10 +1,7 @@
-
-
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FoodItem } from '../../redux/interfaces';
-import './ProductItem.css';
-import './ProductItemResponsive.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import { FoodItem } from "../../redux/interfaces";
+import "./ProductItem.css";
 
 interface ProductItemProps {
   dish: FoodItem;
@@ -18,13 +15,15 @@ const ProductItem: React.FC<ProductItemProps> = ({ dish }) => {
         <img src={`images/menu-page/${image}`} alt={name} />
       </div>
       <div className="card-body text-center">
-
         <h5 className="card-title">{name}</h5>
-        <div className='price-and-btn d-flex justify-content-center align-items-center gap-4'>
-          <p className="card-text">{price.toLocaleString('vi', {style : 'currency', currency : 'VND'})} </p>
+        <div className="price-and-btn ">
+          <p className="card-text">
+            {price.toLocaleString("vi", { style: "currency", currency: "VND" })}{" "}
+          </p>
           <Link to={`/dish-details/${id}`}>
             <button className="cart-item-buy-btn btn btn-primary rounded-pill">
-              Chi tiết </button>
+              Chi tiết{" "}
+            </button>
           </Link>
         </div>
       </div>
@@ -33,7 +32,3 @@ const ProductItem: React.FC<ProductItemProps> = ({ dish }) => {
 };
 
 export default ProductItem;
-
-
-
-
