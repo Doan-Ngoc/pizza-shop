@@ -1,172 +1,213 @@
-.container {
-    margin: 0 auto;
-}
-
 .checkout {
-    padding: 100px 0;
-}
+  margin: 50px auto;
 
-.checkout .title-checkout {
-    display: flex;
-    gap: 5px;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 17px;
-}
-
-.title-checkout p {
-    color: #888888;
-
-}
-
-.title-checkout span {
-    color: #00814b;
+  width: 100%;
 }
 
 .checkout .billing-detail {
-    width: 50%;
+  width: 90%;
 }
 
 .billing-detail h2 {
-    font-weight: 600;
-    font-size: 2rem;
-    line-height: 48px;
-    color: var(--primary-color-1);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--primary-color-1);
+  padding-left: 0;
 }
 
 .billing-detail span,
 .billing-detail div {
-    font-size: 1.2rem
+  font-size: 15px;
 }
 
 .billing-detail input {
-    padding-left: 10px;
-    margin-top: 10px;
-    font-size: 1.2rem;
+  padding-left: 10px;
+  margin-top: 5px !important;
+  font-size: 13px !important;
+  height: 30px !important;
+  width: 100%;
+  border: 1px solid #ebebeb;
+  font-size: 13px !important;
 }
 
-.billing-detail .input-name {
-    padding-top: 23px;
-    width: 100%;
-}
-
-.billing-detail .input-name input {
-    width: 100%;
-    height: 48px;
-    border: 1px solid #EBEBEB;
-}
-
-.billing-detail .input-address {
-    padding-top: 23px;
-    width: 100%;
-}
-
-.billing-detail .input-address input {
-    width: 100%;
-    height: 48px;
-    border: 1px solid #EBEBEB;
-}
-
-.billing-detail .input-city {
-    padding-top: 23px;
-    width: 100%;
-}
-
-.billing-detail .input-city input {
-    width: 100%;
-    height: 48px;
-    border: 1px solid #EBEBEB;
-}
-
-.billing-detail .input-phone {
-    padding-top: 23px;
-    width: 100%;
-}
-
-.billing-detail .input-phone input {
-    width: 100%;
-    height: 48px;
-    border: 1px solid #EBEBEB;
-}
-
-.billing-detail .input-mail {
-    padding-top: 23px;
-    width: 100%;
-}
-
-.billing-detail .input-mail input {
-    width: 100%;
-    height: 48px;
-    border: 1px solid #EBEBEB;
+.billing-input {
+  padding-top: 10px !important;
+  width: 100%;
 }
 
 .subtotal,
 .coupon,
 .discount-amount {
-    padding-top: 23px
+  padding-top: 10px;
+}
+
+.subtotal-price {
+  font-size: 15px !important;
+  font-weight: 600;
+  color: var(--primary-color-1);
 }
 
 .discount-amount {
-    color: var(--primary-color-2)
+  color: var(--primary-color-2);
+  font-size: 15px !important;
 }
 
 .order {
-    padding-top: 52px;
-    margin-bottom: 50px;
-    width: 100%;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
-.subtotal-price,
-.subtotal,
 .coupon {
-    font-weight: 600;
-    color: var(--primary-color-1)
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-weight: 600;
+  color: var(--primary-color-1);
 }
 
+.title-coupon {
+  padding-top: 10px;
+}
+
+.input-coupon {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 10px;
+}
+
+.coupon input {
+  border: 1px solid #ebebeb;
+}
 .coupon button {
-    background-color: var(--primary-color-1);
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    font-size: 1.1rem !important;
+  width: 100px; /* smaller button on mobile */
+  background-color: var(--primary-color-1);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px !important; /* smaller on mobile */
 }
 
 .order h2 {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 48px;
-    color: var(--text-color2);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: var(--text-color2);
 }
 
 .place-order {
-    border: none;
-    border-radius: 10px;
-    padding: 10px 20px;
-    background-color: #00814b;
-    color: #FFFFFF;
-    cursor: pointer;
-    margin-top: 40px;
-    width: 50%;
-    font-family: 'Kanit', sans-serif;
-    font-size: 1.3rem !important;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background-color: #00814b;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 50px;
+  width: 50%;
+  font-family: "Kanit", sans-serif;
+  font-size: 16px !important;
 }
 
 .place-order:hover {
-    transform: scale(1.1);
-    opacity: 1;
-    background-color: var(--primary-color-2);
+  transform: scale(1.05);
+  opacity: 1;
+  background-color: var(--primary-color-2);
 }
 
 .modal-body {
-    font-size: 1.1rem;
-    margin: 0 auto !important;
+  font-size: 1rem;
+  margin: 0 auto !important;
 }
 
 .submit-btn {
-    background-color: var(--primary-color-1);
-    border: none !important;
-    margin: 0 auto !important;
-    width: 20%;
-    color: white;
-    padding: 5px
+  background-color: var(--primary-color-1);
+  border: none !important;
+  margin: 0 auto !important;
+  width: 50%;
+  color: white;
+  padding: 5px;
+}
+
+.title-total-bill,
+.title-fee,
+.title-voucher {
+  font-size: 15px !important;
+  padding-bottom: 10px;
+}
+
+.voucher-btn {
+  font-size: 16px !important;
+}
+
+.input-voucher {
+  width: 150px;
+}
+
+@media (min-width: 768px) {
+  .checkout {
+    margin: 100px auto;
+  }
+  .billing-detail h2,
+  .order h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .billing-detail span,
+  .billing-detail div,
+  .billing-detail p,
+  .title-total-bill,
+  .title-fee,
+  .title-voucher,
+  .discount-amount,
+  .subtotal-price {
+    font-size: 18px !important;
+  }
+
+  .billing-detail input {
+    height: 40px;
+    font-size: 16px !important;
+  }
+
+  .coupon button,
+  .voucher-btn {
+    font-size: 16px;
+  }
+
+  .place-order {
+    width: 30%;
+    font-size: 22px !important;
+    padding: 12px 20px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .billing-detail h2,
+  .order h2 {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  .billing-detail span,
+  .billing-detail div,
+  .billing-detail p,
+  .title-total-bill,
+  .title-fee,
+  .title-voucher,
+  .discount-amount,
+  .subtotal-price {
+    font-size: 20px !important;
+  }
+
+  .billing-detail input {
+    height: 48px;
+    font-size: 18px !important;
+  }
+
+  .coupon button,
+  .voucher-btn {
+    font-size: 18px;
+  }
 }

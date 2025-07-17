@@ -1,5 +1,5 @@
 import "./Checkout.css";
-import "./checkout-responsive.css";
+// import "./checkout-responsive.css";
 import { Modal } from "bootstrap";
 import { useState, useEffect, useRef, useMemo } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -103,7 +103,7 @@ const Checkout: React.FC = () => {
   // Rendering
   return (
     <div className="checkout container">
-      <div className="billing-detail w-50 m-auto">
+      <div className="billing-detail m-auto">
         <h2 className="mb-4 text-center">Thông tin đơn hàng</h2>
         <form onSubmit={handleSubmit(handleOrderSubmit)}>
           <div
@@ -114,14 +114,14 @@ const Checkout: React.FC = () => {
               borderRadius: "20px",
             }}
           >
-            <div className="input-name">
+            <div className="billing-input input-name">
               <span>Tên của bạn</span>
               <span style={{ color: "#D6763C" }}>*</span>
               <div>
                 <input type="text" id="name" required {...register("name")} />
               </div>
             </div>
-            <div className="input-address">
+            <div className="billing-input  input-address">
               <span>Địa chỉ giao hàng</span>
               <span style={{ color: "#D6763C" }}>*</span>
               <div>
@@ -133,14 +133,14 @@ const Checkout: React.FC = () => {
                 />
               </div>
             </div>
-            <div className="input-phone">
+            <div className="billing-input input-phone">
               <span>Số điện thoại</span>
               <span style={{ color: "#D6763C" }}>*</span>
               <div>
                 <input type="text" id="phone" required {...register("phone")} />
               </div>
             </div>
-            <div className="input-mail">
+            <div className="billing-input input-mail">
               <span>Địa chỉ email</span>
               <span style={{ color: "#D6763C" }}>*</span>
               <div>
@@ -156,12 +156,10 @@ const Checkout: React.FC = () => {
                 })}{" "}
               </div>
             </div>
-            <div className="coupon w-100 d-flex justify-content-between align-items-center">
+            <div className="coupon w-100">
               <div className="title-coupon">Mã giảm giá:</div>
-              <div>
+              <div className="input-coupon">
                 <input
-                  className="input-coupon"
-                  style={{ padding: "0px 10px" }}
                   type="text"
                   value={inputCouponValue}
                   onChange={(e) => setInputCouponValue(e.target.value)}
