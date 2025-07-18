@@ -1,5 +1,4 @@
 import "./Checkout.css";
-// import "./checkout-responsive.css";
 import { Modal } from "bootstrap";
 import { useState, useEffect, useRef, useMemo } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
