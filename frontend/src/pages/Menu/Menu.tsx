@@ -27,7 +27,7 @@ const Menu: React.FC = () => {
         className="menu-header img-fluid"
         src="images/menu-page/menu-header.png"
       />
-      {isLoading ? (
+      {!isLoading ? (
         <div className="mt-5">
           <Loading />
         </div>

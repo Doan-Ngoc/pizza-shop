@@ -87,7 +87,6 @@ const Checkout: React.FC = () => {
   const [createOrderMutation] = useCreateOrderMutation();
   const completeModalRef = useRef<HTMLDivElement>(null);
   const handleConfirmModal = async () => {
-    console.log("processing");
     setIsProcessing(true);
     try {
       await createOrderMutation(order).unwrap();
