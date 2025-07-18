@@ -14,6 +14,11 @@ const Checkout: React.FC = () => {
   const navigate = useNavigate();
   const order = useAppSelector((state) => state.order);
   const cartData = useAppSelector((state) => state.cart.cartData);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [orderResult, setOrderResult] = useState<"success" | "fail" | null>(
+    null
+  );
+
   // Tính tiền giỏ hàng
   const cartValue = useMemo(() => {
     let allPrice = 0;
@@ -60,6 +65,7 @@ const Checkout: React.FC = () => {
   // Submit form data
   const { register, handleSubmit } = useForm<Partial<OrderState>>();
   const confirmModalRef = useRef<HTMLDivElement>(null);
+
   const handleOrderSubmit: SubmitHandler<Partial<OrderState>> = async (
     data
   ) => {
@@ -81,21 +87,27 @@ const Checkout: React.FC = () => {
   const [createOrderMutation] = useCreateOrderMutation();
   const completeModalRef = useRef<HTMLDivElement>(null);
   const handleConfirmModal = async () => {
+    console.log("processing");
+    setIsProcessing(true);
     try {
-      await createOrderMutation(order);
+      await createOrderMutation(order).unwrap();
       dispatch(resetOrder());
       dispatch(clearCart());
+      setOrderResult("success");
+      setIsProcessing(false);
+    } catch (error) {
+      setOrderResult("fail");
+      setIsProcessing(false);
+      console.error("Order creation failed:", error);
+    } finally {
       if (confirmModalRef.current) {
         const modal = new Modal(confirmModalRef.current);
         modal.hide();
       }
-      // Show success modal
       if (completeModalRef.current) {
         const modal = new Modal(completeModalRef.current);
         modal.show();
       }
-    } catch (error) {
-      console.error("Order creation failed:", error);
     }
   };
 
@@ -105,14 +117,7 @@ const Checkout: React.FC = () => {
       <div className="billing-detail m-auto">
         <h2 className="mb-4 text-center">Thông tin đơn hàng</h2>
         <form onSubmit={handleSubmit(handleOrderSubmit)}>
-          <div
-            className="form-container-checkout"
-            style={{
-              backgroundColor: "var(--background-color-1",
-              padding: 30,
-              borderRadius: "20px",
-            }}
-          >
+          <div className="form-container-checkout">
             <div className="billing-input input-name">
               <span>Tên của bạn</span>
               <span style={{ color: "#D6763C" }}>*</span>
@@ -141,7 +146,6 @@ const Checkout: React.FC = () => {
             </div>
             <div className="billing-input input-mail">
               <span>Địa chỉ email</span>
-              <span style={{ color: "#D6763C" }}>*</span>
               <div>
                 <input type="email" id="mail" {...register("email")} />
               </div>
@@ -227,17 +231,21 @@ const Checkout: React.FC = () => {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-body">
-              Xác nhận gửi đơn đặt hàng? <br />
+              {isProcessing
+                ? "Đơn hàng của bạn đang được xử lý. Vui lòng không thoát khỏi trang."
+                : "Xác nhận gửi đơn đặt hàng? "}
             </div>
             <div className="modal-footer">
-              <button
-                type="button"
-                className="submit-btn rounded-pill"
-                data-bs-dismiss="modal"
-                onClick={handleConfirmModal}
-              >
-                OK
-              </button>
+              {!isProcessing && (
+                <button
+                  type="button"
+                  className="submit-btn rounded-pill"
+                  data-bs-dismiss="modal"
+                  onClick={handleConfirmModal}
+                >
+                  OK
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -256,8 +264,17 @@ const Checkout: React.FC = () => {
         <div className="modal-dialog" role="document">
           <div className="modal-content">
             <div className="modal-body">
-              Đơn hàng của bạn đã được ghi nhận. <br /> Cảm ơn bạn đã lựa chọn
-              TNT Pizza.
+              {orderResult === "success" ? (
+                <>
+                  Đơn hàng của bạn đã được ghi nhận. <br /> Cảm ơn bạn đã lựa
+                  chọn TNT Pizza.
+                </>
+              ) : (
+                <>
+                  Đặt hàng thất bại. Vui lòng thử lại sau.
+                  <br />
+                </>
+              )}
             </div>
             <div className="modal-footer">
               <button

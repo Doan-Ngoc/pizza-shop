@@ -1,5 +1,4 @@
 import "./Header.css";
-// import "./Header-responsive.css";
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaSearch } from "react-icons/fa";
@@ -54,20 +53,7 @@ const Header: React.FC = () => {
               <img className="header-logo" src="/images/logo.png" />
             </Link>
           </div>
-
-          {/* <div className="toggler">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button> */}
-          {/* <div className="collapse navbar-collapse" id="navbarSupportedContent"> */}
+          {/* Pages navbar */}
           <ul className="navbar-nav gap-3 rounded-pill">
             <li className="nav-item">
               <Link className="nav-link" to="/about-us">
@@ -110,10 +96,7 @@ const Header: React.FC = () => {
               </div>
             )}
           </div>
-          {/* <div className="search-and-cart"> */}
-          {/* Search */}
-          {/* </div> */}
-
+          {/* Shopping cart */}
           <button
             className="cart-btn btn rounded-pill d-flex justify-content-center align-items-center gap-1"
             data-bs-toggle="collapse"

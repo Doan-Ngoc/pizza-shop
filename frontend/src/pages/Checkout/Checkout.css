@@ -1,11 +1,19 @@
 .checkout {
   margin: 50px auto;
-
   width: 100%;
 }
 
 .checkout .billing-detail {
   width: 90%;
+}
+
+.form-container-checkout {
+  background-color: var(--background-color-1);
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .billing-detail h2 {
