@@ -31,6 +31,7 @@ const PopularDish: React.FC = () => {
             className={`nav-item col-3 ${
               activeTab === "pizza" ? "active" : ""
             }`}
+            onClick={() => handleTabClick("pizza")}
           >
             <a
               className="nav-link"
@@ -38,7 +39,6 @@ const PopularDish: React.FC = () => {
               data-bs-toggle="tab"
               href="#pizza"
               role="tab"
-              onClick={() => handleTabClick("pizza")}
             >
               PIZZA
             </a>
@@ -47,6 +47,7 @@ const PopularDish: React.FC = () => {
             className={`nav-item col-3 ${
               activeTab === "chicken" ? "active" : ""
             }`}
+            onClick={() => handleTabClick("chicken")}
           >
             <a
               className="nav-link"
@@ -54,7 +55,6 @@ const PopularDish: React.FC = () => {
               data-bs-toggle="tab"
               href="#chicken"
               role="tab"
-              onClick={() => handleTabClick("chicken")}
             >
               GÀ RÁN
             </a>
@@ -63,6 +63,7 @@ const PopularDish: React.FC = () => {
             className={`nav-item col-3 ${
               activeTab === "appetizer" ? "active" : ""
             }`}
+            onClick={() => handleTabClick("appetizer")}
           >
             <a
               className="nav-link"
@@ -70,7 +71,6 @@ const PopularDish: React.FC = () => {
               data-bs-toggle="tab"
               role="tab"
               href="#appetizer"
-              onClick={() => handleTabClick("appetizer")}
             >
               KHAI VỊ
             </a>
@@ -79,6 +79,7 @@ const PopularDish: React.FC = () => {
             className={`nav-item col-3 ${
               activeTab === "salad" ? "active" : ""
             }`}
+            onClick={() => handleTabClick("salad")}
           >
             <a
               className="nav-link"
@@ -86,7 +87,6 @@ const PopularDish: React.FC = () => {
               data-bs-toggle="tab"
               href="#salad"
               role="tab"
-              onClick={() => handleTabClick("salad")}
             >
               SALAD
             </a>

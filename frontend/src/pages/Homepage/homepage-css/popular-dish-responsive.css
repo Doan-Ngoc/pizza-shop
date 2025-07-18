@@ -13,7 +13,7 @@
 .nav-item .nav-link {
   color: #000 !important;
   font-size: 1rem !important;
-  width: 100%;
+  /* width: 100%; */
   box-sizing: border-box;
 }
 
@@ -23,6 +23,7 @@
   justify-content: center;
   border: 1px solid white;
   border-radius: 15px 15px 0 0;
+  font-weight: 400;
 }
 
 .nav-tabs .nav-item.active {
@@ -34,17 +35,18 @@
 }
 
 .nav-tabs .nav-item.active .nav-link {
-  background-color: var(--primary-color-1) !important;
   color: white !important;
-  border: none;
-  text-transform: capitalize;
-  font-weight: 600;
 }
 
 .nav-item:hover {
   background-color: var(--primary-color-1) !important;
   color: white !important;
   border: 1px solid var(--primary-color-1);
+  cursor: pointer;
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: transparent !important;
 }
 
 /*Popular Dish List*/
